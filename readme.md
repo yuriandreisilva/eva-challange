@@ -1,16 +1,16 @@
-# Project Informations
+# Informações do projeto
 
 Projeto criado para inserir jornadas de um colaborador. Desafio Eva Copilot. Realizado por Yuri.
 
-# Project Setup Instructions
+# Instruções para Setup
 
-## Step 1: Configure Environment Variables
+## Passo 1: Configure variáveis de ambiente
 Solicite os dados para colocar no `.env`, com base no `.env-example`.
 
-## Step 2: Recommended Node Version
+## Passo 2: Versão do node recomendada
 Versão node recomendada: `20.17.0`.
 
-## Step 3: Run Setup Script
+## Passo 3: Rodar este comando para setup geral
 Execute o comando:
 ```bash
 npm run setup
@@ -21,7 +21,7 @@ Também baixará a imagem do MongoDB e Redis para gerenciamento das filas do job
 
 E também fará migration para inserir dados necessários, como por exemplo, colaborador, jornada e ações (e ainda categoria de ação).
 
-## Step 4: Running the Project
+## Passo 4: Rodando o projeto
 Após setup, para rodar o projeto é simples:
 
 1. Acesse a pasta `/backend` e rode:
