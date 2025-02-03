@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: journeys-mongo
+    restart: always
+    ports:
+      - "27019:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - mongodb_data:/data/db
+
+  redis:
+    image: redis:latest
+    container_name: redis_container
+    restart: always
+    ports:
+      - "6380:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    depends_on:
+      - mongodb
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6380
+      - MONGO_URI=mongodb://admin:admin@mongodb:27017/journeys?authSource=admin
+
+  worker:
+    build: ./backend
+    container_name: worker
+    command: ["node", "backend/jobs/emailProcessor.js"]
+    depends_on:
+      - redis
+      - backend
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6380
+      - MONGO_URI=mongodb://admin:admin@mongodb:27017/journeys?authSource=admin
+
+volumes:
+  mongodb_data:
+    driver: local
+  redis_data:

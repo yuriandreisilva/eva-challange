@@ -1,0 +1,12 @@
+{
+  "name": "journeys",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm run install-all && npm run docker-up && npm run migrate",
+    "install-all": "npm run install-frontend && npm run install-backend",
+    "install-frontend": "cd frontend && npm install",
+    "install-backend": "cd backend && npm install",
+    "docker-up": "cd backend && docker-compose up -d",
+    "migrate": "cd backend && npm run migrate:add-remove_all_data"
+  }
+}
