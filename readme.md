@@ -45,6 +45,10 @@ Após setup, para rodar o projeto é simples:
     ```bash
     npm test
     ```
+## Para o caso de querer refazer o processo:
 
-
+1. Limpe a base, rode o comando: 
+    ```bash
+    npm run migrate-remove
+    ```
 
