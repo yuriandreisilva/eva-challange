@@ -7,6 +7,6 @@
     "install-frontend": "cd frontend && npm install",
     "install-backend": "cd backend && npm install",
     "docker-up": "cd backend && docker-compose up -d",
-    "migrate": "cd backend && npm run migrate:add-remove_all_data"
+    "migrate": "cd backend && npm run migrate:add-journey_with_actions"
   }
 }

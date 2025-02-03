@@ -39,7 +39,7 @@ const addJourneyWithActions = async () => {
   const newCollaborator = {
     name: "Lucas Franca",
     cpf: "12345678901",
-    email: "evateste14@gmail.com" // Alterar lucas@evacopilot.com.br
+    email: process.env.EMAIL_TO_RECEIVE || "lucas@evacopilot.com.br"
   };
 
   try {
