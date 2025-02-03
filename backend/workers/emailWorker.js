@@ -15,7 +15,7 @@ emailQueue.on('active', (job) => {
 });
 
 async function sendEmail(emailContent) {
-  console.log('here', emailContent, process.env.SENDGRID_API_KEY)
+  console.log('here', emailContent)
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
     port: 587,

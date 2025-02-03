@@ -39,5 +39,12 @@ Após setup, para rodar o projeto é simples:
     npm run queue
     ```
 
+## Passo 5: Rodando o teste de envio de e-mail
+
+1. Acesse a pasta `/backend` e rode:
+    ```bash
+    npm test
+    ```
+
 
 
